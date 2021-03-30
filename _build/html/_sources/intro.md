@@ -1,7 +1,11 @@
-Welcome to your Jupyter Book
+Welcome to you, fellow traveler of the Quantum World!
 ============================
 
-This is a small sample book to give you a feel for how book content is
-structured.
+by barrista Samuel Desrosiers
 
-Check out the content pages bundled with this sample book to get started.
+
+This is the beginning of what will be an amazing journey.
+
+Like the ones who designed the plans of a cathedral... We won't see the
+completed product of our imagination. For this is a cathedral constantly in
+the making!
