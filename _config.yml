@@ -1,7 +1,7 @@
 # Book settings
 title: The Hitchiker's Guide to the QuICoPhy
-author: The Jupyter Book Community
-logo: logo.png
+author: The QuICoPhy team
+logo: hand_logo.png
 
 latex:
   latex_documents:
