@@ -1,7 +1,3 @@
 - file: intro
 - file: tn_basics
 - file: level_spacing
-- file: content
-  sections:
-    - file: markdown
-    - file: notebooks
