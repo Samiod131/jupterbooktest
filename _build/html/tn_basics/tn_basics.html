@@ -1,0 +1,307 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basic Tensor Networks country mix &#8212; The Hitchiker&#39;s Guide to the QuICoPhy</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.37f24b989f4638ff9c27c22dc7559d4f.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Our Level Spacing brew" href="../level_spacing/level_spacing.html" />
+    <link rel="prev" title="Welcome to you, fellow traveler of the Quantum World!" href="../intro.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/hand_logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">The Hitchiker's Guide to the QuICoPhy</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Welcome to you, fellow traveler of the Quantum World!
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Basic Tensor Networks country mix
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../level_spacing/level_spacing.html">
+   Our Level Spacing brew
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/tn_basics/tn_basics.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-are-tn">
+   What are TN?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#common-operations-on-tensors">
+   Common operations on tensors
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="basic-tensor-networks-country-mix">
+<h1>Basic Tensor Networks country mix<a class="headerlink" href="#basic-tensor-networks-country-mix" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+    <p>by barista Samuel Desrosiers</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This article is still incomplete. If you are able to read this rigth now… WTF honestly!</p>
+</div>
+<p>If you are like us, you do like to wake up to a good cup’O Joe in the morning. When I share with friends the fact that my favorite morning beverage is made out of tensor networks, some people do not believe me. They say: ‘’Sam, how can you enjoy such a hard beginning to a research journey?’’ And I get what they mean… But what they do not know is that TN (tensor networks) can be made into a very gentle and soft beverage if you give it enough love… or if you use our special Tensor Network country mix.</p>
+<p>In this short tutorial, I will give you a basic tour of the field that will make you a TN beverage enthusiast. This text will follow the logical path of the article <em><strong>Basic tensor network computations in physics</strong></em> (i.e. <em><strong>Méthodes de calcul avec réseaux de tenseurs en physique</strong></em>, yes there IS a French translated version to that paper!).  Notice here the unashamed amount of self promotion. I will also guide you toward other ressources to perfect your TN game and make you a true expert of the field.</p>
+<p>Here, the text will be supported by code examples illustrating TN operations. TN can be expressed in three different languages:</p>
+<ul class="simple">
+<li><p>the widely known analytical <strong>Einstein indices representation</strong>;</p></li>
+<li><p>what we call the <strong>diagrammatic representation</strong>;</p></li>
+<li><p><strong>numerics</strong>, or code.</p></li>
+</ul>
+<p>During this whole tutorial, we will support the article’s content using the three representations above. Playing with the three of those is necessary to make you a master of TN.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Here is a link to the arXiv version of the paper that will make it easier for you to follow this tutorial: <a class="reference external" href="https://arxiv.org/pdf/1911.11566.pdf">TN guide</a>. Both French and English versions are included there.</p>
+</div>
+<div class="section" id="what-are-tn">
+<h2>What are TN?<a class="headerlink" href="#what-are-tn" title="Permalink to this headline">¶</a></h2>
+<p>If you’ve never worked with TN before, I would suggest reading sections I to III of the <a class="reference external" href="https://arxiv.org/pdf/1911.11566.pdf">TN guide</a>.  Go on…</p>
+<p>Yeah… Go read it…</p>
+<p>I’ll wait…</p>
+<p>Okay, so there we discussed the role that TN play in illustrating correlations in quantum systems and how they allow us to efficiently simulate them. Tensor networks are in fact playing a huge role in our group’s research and are shown to be usable in a large variety of ways, allowing us to solve problems that are leaving the scope of quantum mechanics.</p>
+<p>TN allows us to show the inherent link between vastly different problems, information theory and quantum mechanics. The profound dose of optimism in breaths into modern physics and mathematics is why a good TN brew is the best way to begin a research day… In my humble opinion.</p>
+<p>For the scope of this turtorial. We can simply consider tensors as generalisations of matrices. In that sense, vectors are rank 1 tensors and matrices are rank 2 tensors. We’ll say taht tensors are linear maps represented with indices.</p>
+<p>Here we see three ways tensors can be represented that we discussed in the introduction. A rank 1 (vector), rank 2 (matrix) and rank 3 tensors are all displayed in these three languages.</p>
+<p><img alt="languages" src="../_images/languages.PNG" /></p>
+<p>Take a time to analyse this image and to understand how these languages maps from one to the other. Obviously tensors of superior ranks (4 and more) cannot be displayed explicitly like what we do here… But you probably get the idea at that point. The legs comming out of the shapes in the diagrammatic representation are analogues of each tensor’s index.</p>
+<p>Let’s represent these three tensors in a python snippet of code.</p>
+<p>(snippet of code)</p>
+<p>So we went a little deeper into what are tensors… but we have yet to define what tensor networks (TN) are!</p>
+<p>Remember how matrices and vectors multiply?</p>
+<p>… Of course you remember! You are a physicist working in a field related to quantum mechanics… This was a rethorical question! But yeah…</p>
+<p>If you think about it, matrices products, vectors scalar products are specific versions of tensor contraction. This operation happens when, in the <strong>einstein representation</strong> an index is repeated two times in an expression.</p>
+<p>An expression of many tensors, in that sense, IS a TN. A network of tensors linked together by linear algebra operation. Often the contraction operation on tensors indices will be reprensented in the <strong>diagrammatic form</strong> by linking two legs together. You can understand that the two indices anologue to these legs are the ones the contraction is applied to.</p>
+<p>The contraction is one of the basic operations applied on tensors… It will be further explained in the next section.</p>
+</div>
+<div class="section" id="common-operations-on-tensors">
+<h2>Common operations on tensors<a class="headerlink" href="#common-operations-on-tensors" title="Permalink to this headline">¶</a></h2>
+<p>Okay… So if you never played with TN before I would suggest</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Here’s my note!</p>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./tn_basics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../intro.html" title="previous page">Welcome to you, fellow traveler of the Quantum World!</a>
+    <a class='right-next' id="next-link" href="../level_spacing/level_spacing.html" title="next page">Our Level Spacing brew</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By The QuICoPhy team<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
